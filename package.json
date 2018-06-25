@@ -1,9 +1,9 @@
 {
 	"name": "discord.js-commando",
-	"version": "1.1.6-selfbot",
-	"description": "The official command framework for Discord.js",
+	"version": "1.1.6-rus",
+	"description": "The official command framework for Discord.js on Russian language",
 	"license": "Apache-2.0",
-	"author": "Schuyler Cebulskie <Gawdl3y@gawdl3y.com> (https://gawdl3y.com/)",
+	"author": "Schuyler Cebulskie <Gawdl3y@gawdl3y.com> (https://gawdl3y.com/), Andrienko Vladimir <derise2000@gmail.com> (d3rise.github.io)",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/discordjs/Commando.git"
