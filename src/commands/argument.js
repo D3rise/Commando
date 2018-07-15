@@ -181,7 +181,7 @@ class Argument {
 			prompts.push(await msg.reply(stripIndents`
 				${empty ? this.prompt : valid ? valid : `Вы указали неверный ${this.label}. Попробуйте еще раз.`}
 				${oneLine`
-				\nНапишите \`cancel\` для выхода из команды..
+		\n\nНапишите \`cancel\` для выхода из команды.
 				${wait ? `Выполение команды будет автоматически отменено через ${this.wait} секунд, если вы не ответите.` : ''}
 			`}
 			`));
