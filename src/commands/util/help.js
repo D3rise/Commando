@@ -53,29 +53,29 @@ module.exports = class HelpCommand extends Command {
 				const messages = [];
 				try {
 					messages.push(await msg.embed({
-						color: msg.guild ? msg.member.displayColor : 16711749,
+						color: 16711749,
 						description: help
 					}));
 				} catch(err) {
 					messages.push(await msg.embed({
-						color: msg.guild ? msg.member.displayColor : 16711749,
+						color: 16711749,
 						decription: 'Unable to send you the help message.'
 					}, '', { reply: this.client.user }));
 				}
 				return messages;
 			} else if(commands.length > 15) {
 				return msg.embed({
-					color: msg.guild ? msg.member.displayColor : 16711749,
+					color: 16711749,
 					description: 'Найдено несколько команд. Будьте более точными.'
 				}, '', { reply: this.client.user });
 			} else if(commands.length > 1) {
 				return msg.embed({
-					color: msg.guild ? msg.member.displayColor : 16711749,
+					color: 16711749,
 					description: disambiguation(commands, 'commands')
 				}, '', { reply: this.client.user });
 			} else {
 				return msg.embed({
-					color: msg.guild ? msg.member.displayColor : 16711749,
+					color: 16711749,
 					description: `Невозможно идентифицировать команду. Используйте ${msg.usage(
 						null, msg.channel.type === 'dm' ? null : undefined, msg.channel.type === 'dm' ? null : undefined
 					)} для просмотра полного списка команд.`
