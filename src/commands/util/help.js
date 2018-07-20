@@ -91,7 +91,6 @@ module.exports = class HelpCommand extends Command {
 					К примеру, ${Command.usage('prefix', msg.guild ? msg.guild.commandPrefix : null, this.client.user)}.
 				`}
 
-				Используйте ${this.usage('<command>', null, null)} для просмотра детальной информации о команде.
 				Используйте ${this.usage('all', null, null)} для просмотра списка *всех* команд.
 
 				__**${showAll ? 'Все команды' : `Доступные команды в ${msg.guild || 'этом ЛС'}`}**__
@@ -100,7 +99,7 @@ module.exports = class HelpCommand extends Command {
 					.map(grp => stripIndents`
 						__${grp.name}__
 						${(showAll ? grp.commands : grp.commands.filter(cmd => cmd.isUsable(msg)))
-							.map(cmd => `**${cmd.name}:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
+							.map(cmd => `**js!${cmd.name}:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
 						}
 					`).join('\n\n')
 				}`;
@@ -110,13 +109,13 @@ module.exports = class HelpCommand extends Command {
 
 					for(const part in splitContent) {
 						messages.push(await msg.embed({ // eslint-disable-line no-await-in-loop
-							color: msg.guild ? msg.member.displayColor : 16711749,
+							color: 16711749,
 							description: splitContent[part]
 						}));
 					}
 				} else {
 					messages.push(await msg.embed({ // eslint-disable-line no-await-in-loop
-						color: msg.guild ? msg.member.displayColor : 16711749,
+						color: 16711749,
 						description: body
 					}));
 				}
