@@ -59,7 +59,7 @@ module.exports = class HelpCommand extends Command {
 				} catch(err) {
 					messages.push(await msg.embed({
 						color: 16711749,
-						decription: 'Unable to send you the help message.'
+						decription: 'Невозможно отправить сообщение со списком команд.'
 					}, '', { reply: this.client.user }));
 				}
 				return messages;
